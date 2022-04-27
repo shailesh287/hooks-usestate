@@ -1,10 +1,17 @@
-import React from "react";
-import Test from "./Test";
+import React, { useState } from "react";
+import UseEffectHook from "./Hooks/UseEffectHook";
+// import Test from "./Test";
 
 const App = () => {
+  const [showComp, setshowComp] = useState(true);
   return (
     <div>
-      <Test />
+      {/* <Test /> */}
+
+      {showComp ? <UseEffectHook /> : null}
+      <button onClick={() => setshowComp(false)}>
+        unmount useEffect Component
+      </button>
     </div>
   );
 };
